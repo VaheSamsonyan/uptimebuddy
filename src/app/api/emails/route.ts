@@ -43,19 +43,7 @@ export async function POST(request: NextRequest) {
       replyTo: process.env.GMAIL_USER,
     });
 
-    const teamEmailInfo = await transporter.sendMail({
-      from: `"UptimeBuddy" <${process.env.GMAIL_USER}>`,
-      to: "uptimebuddyteam@gmail.com",
-      subject: "New signup/request received",
-      text: `A new user signed up: ${to}`,
-      html: `<p>A new user signed up: <strong>${to}</strong></p>`,
-      replyTo: process.env.GMAIL_USER,
-    });
-
-    return NextResponse.json(
-      { message: "Email sent to user and team", info, teamEmailInfo },
-      { status: 200 },
-    );
+    return NextResponse.json({ message: "Email sent", info }, { status: 200 });
   } catch (error) {
     console.error("Email error:", error);
     return NextResponse.json(
