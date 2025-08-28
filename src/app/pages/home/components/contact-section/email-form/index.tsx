@@ -102,7 +102,8 @@ export default function EmailForm() {
                         />
                       </FormControl>
                       <FormDescription className="text-gray-400 text-base leading-relaxed">
-                        Get early access and updates. We respect your privacy.
+                        No credit card required. Be the first to know when we
+                        launch.
                       </FormDescription>
                       <FormMessage className="text-red-400 text-base font-medium" />
                     </FormItem>
